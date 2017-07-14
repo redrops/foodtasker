@@ -110,9 +110,6 @@ def customer_add_order(request):
             else:
                 return JsonResponse({"status": "failed", "error": "Failed connect to Stripe."})
 
-
-
-
 def customer_get_latest_order(request):
     access_token = AccessToken.objects.get(token = request.GET.get("access_token"), expires__gt = timezone.now())
 
